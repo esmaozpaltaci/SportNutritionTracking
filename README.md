@@ -68,3 +68,6 @@ Bu repo, Nginx ve PostgreSQL kullanarak Laravel projeleri geliştirmek için haz
 Kurulum tamamlandı. Artık projenize tarayıcınızdan erişebilirsiniz:
 
 **http://localhost:2020**
+
+# SportNutritionTracking
+A tracking system for excercise and nutrition
