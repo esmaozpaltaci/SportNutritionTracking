@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Eloquent\Model;
+use App\Models\Eloquent\Customer;
 
 class Meal extends Model
 {
@@ -11,4 +11,8 @@ class Meal extends Model
         {
             return $this->belongsTo(Customer::class);
         }
+
+    function food () {
+        return $this -> belongsTo(Food::class);
+    }
 }

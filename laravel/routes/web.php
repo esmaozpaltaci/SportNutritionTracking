@@ -16,6 +16,11 @@ Route::get('/hello/{name}/info', function ($name) {
 });
 
 Route::get('/tmp', [TempController::class, 'tmpFunction']);
+Route::get('customers', CustomerController::class);
+Route::get('activities', ActivityController::class);
+Route::get('exercises', ExerciseController::class);
+Route::get('foods', FoodController::class);
+Route::get('meals', MealController::class);
     
 
 
