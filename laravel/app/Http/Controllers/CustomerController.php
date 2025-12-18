@@ -21,21 +21,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        Customer::create([
-            'name' => 'Emre',
-            'surname' => 'Akadal',
-            'birthYear' => '1988',
-            'gender' => 'Male',
-            'address' => 'Beylikdüzü'
-        ]);
-
-        Customer::create([
-            'name' => 'Hakan Umut',
-            'surname' => 'Akadal',
-            'birthYear' => '2016',
-            'gender' => 'Male',
-            'address' => 'Fatih'
-        ]);
+       return view('customers.create');
 
     }
 
@@ -44,7 +30,15 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer =Customer::create({
+            'name' => $request->post('name'),
+            'surname' => $request->post('surname'),
+            'birthYear' => $request->post('birthYear'),
+            'gender' => $request->post('gender'),
+            'address' => $request->post('address')
+        });
+
+        return view('customers.list');
     }
 
     /**
