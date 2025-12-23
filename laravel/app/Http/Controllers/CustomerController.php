@@ -21,8 +21,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-       return view('customers.create');
-
+        return view('customers.create');
     }
 
     /**
@@ -30,15 +29,20 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer =Customer::create({
+        //dd($request->post());
+
+        $customer = Customer::create([
             'name' => $request->post('name'),
             'surname' => $request->post('surname'),
             'birthYear' => $request->post('birthYear'),
             'gender' => $request->post('gender'),
             'address' => $request->post('address')
-        });
+        ]);
 
-        return view('customers.list');
+        // return view('customers.list');
+        return redirect()->route('customers.index');
+        
+        // Customer::create($request->post());
     }
 
     /**
